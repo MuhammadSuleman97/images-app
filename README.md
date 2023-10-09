@@ -43,3 +43,6 @@ You can upload multiple images at a time.
 7. Use these Api-Key, Secret-Key adn also region of your s3 bucket isnide env file for node project.
    ``Note: while using AWS deployment like EC2, we dont need to add access keys or secret keys, our instance can get that from iam role ``
 
+8. In node RestFul API, I first fetch the image resources from the s3 and then using using api-keys, signed those url to get public url which will allow them to be view on frontend web application.
+9. 
+
