@@ -74,13 +74,15 @@ const UploadImage = () => {
                     {uploadComplete ? (
                         <div>
                             <h2>Upload Complete!</h2>
-                            <Button variant="primary" onClick={() => setUploadComplete(false)}>
-                                Upload Another Image
-                            </Button>
-
                             <Button variant="primary" href="/" >
                                 View Images
                             </Button>
+                            <br />
+                            <br />
+                            <Button variant="primary" onClick={() => setUploadComplete(false)}>
+                                Upload Another Image
+                            </Button>
+        
                         </div>
                     ) : (
                         <Form onSubmit={handleSubmit}>

@@ -26,7 +26,7 @@ const CardList = (props) => {
                     </Spinner>
                 </div>
             ) : (
-                <Row xs={1} md={3} className="g-4">
+                <Row xs={2} md={3} className="g-5">
                     {props.images.length ? props.images.map((image, index) => (
                         <Col key={index}>
                             <Card>
