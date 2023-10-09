@@ -1,7 +1,7 @@
 
 
 const { getAllImagesFromS3, uploadImageOnS3, getSignedUrl} = require('../utils/aws');
-
+const fs = require('fs');
 exports.getAllImages = async (req, res) => {
     try {
         const data = await getAllImagesFromS3();
@@ -43,7 +43,11 @@ exports.uploadImages = async (req, res) => {
             const data = await uploadImageOnS3(files[i]);
             const url = await getSignedUrl(data.Key);
             images.push({url, name: files[i].originalname})
+            // delete file from server
+            fs.unlinkSync(files[i].path);
         }
+
+        
 
         res.status(200).json({
             success: true,
